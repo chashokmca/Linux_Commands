@@ -113,13 +113,3 @@ pipes : is nothing but output of one pipe is input to other
 	echo sample.txt | rm -f   : it will not work - when ever pipe not supporting we can use "xargs"
 	echo sample.txt | xargs rm -f  : this will works
 	unzip <file name>
-	
-
-
-
-
-
-
- 
-
- 
