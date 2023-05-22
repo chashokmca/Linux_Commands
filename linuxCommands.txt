@@ -1,0 +1,125 @@
+- In linux file extenction never matter
+- sample.txt file name always diffrent to SAMPLE.txt and Sample.txt
+
+uname :is a command and that is the first word of a command line syntax.
+uname -a
+unmae --all
+uname -i
+
+ls -l : Get list of files with long format, usually shows properties of a file  
+ls -d
+ls -A  : list of hidden files and directories
+ls -a
+ls -t
+ls -r
+
+ls -Al or ls =A -l : no diffrence between these two commands
+
+
+cat sample.txt  : to pring contect of file
+lsblk : to check disk information
+
+touch abc.txt  : to create file we can use touch
+touch abc.txt sample.xml xyz.py : we can create multiple files in a single time
+
+
+rm : to remove file(s)
+
+rm sample.txt : it delete file but before deleting it will ask for the confirmation
+rm -f sample.txt : force remove. no confirmation
+rm -rf dir : removes directory forcefully and recursively
+
+cp <source_file> <destination_file>  : copy filr from one location to other location
+cp sample.txt sample1.txt
+cp -r dir1 dir2 - copy one directory content to other : 'r' is for recursive
+
+"cp" - behaves based on the Target Directory
+
+	if TARGET exists and if it is a file then it is invalid operation.
+	if TARGET exists and if it is a dir then it copies the file inside the directory.
+	if TARGET doesnt exist then it will copy the directory to that TATGET name
+
+mv <source_file> <destination_file>  - is nothig but renamming the file
+mv sample.txt sample1.txt
+mv <soyrce dir> <Target Dir> - rename directory
+
+pwd : display current working directory
+
+cd .. : go to the parent directory
+cd : go to home directory of user
+cd /bin : move to bin location 
+
+mkdir : to create directory
+
+head <file name> : it diplays first 10 lines of code
+head -n 5 <file name> : it diplays first 5 lines of code
+
+tail <file name> : it diplays last 10 lines of code
+tail -n 5 <file name> : it diplays last 5 lines of code
+
+
+grep  : to serch particular string in file
+grep root /etc/passwd : serch string "root" in passswd file
+
+awk : to filter content
+Example: sample.txt
+1:abc:123
+2:bcd:321
+3:cde:432
+
+awk -F : '{print $1,$2}' sample.txt - output: 1, abc and 2, bcd and 3, cde
+
+VIM Editor : We can edit the file by and save the changes by following instructions.
+
+vim file -> Press Insert or i -> Make Changes -> Press ESC -> Press Colon : -> Press wq -> Done
+
+We can come out of file without saving the changes
+
+vim file -> Press Insert or i -> Make Changes -> Press ESC -> Press Colon : -> Press q!
+
+sed : one more editor to update file content at rum time
+	sed -i -e "1d" sample.txt : delete first line on file
+	sed -i -e "5d" sample.txt : delete fifth line on file
+	sed -i -e "/string/d" sample.txt : delete line based on string
+	
+	sed -i -e "1 a I am new line" sample.txt : adding new line content at first line
+	sed -i -e "5 a i am new line" sample.txt : adding new line content at fifth line
+	sed -i -e "/mongod a i am new mongod" sample.txt : adding new line based on string content
+	
+	-sed -i -e "s|Hello|g" sample.txt : delete word "Hello" from file
+	
+	-sed -i -e "s|Hello|sample" sample.txt : replace word "Hello" with "sample" in file
+	
+find :  search for file
+
+	find / -name sample.txt : search for "sample.txt" file in whole directory
+	find /etc -name sample.txt : search for "sample.txt" file in /etc directory
+	
+curl :  curl to browse and download
+	curl https://archive.apache.org/dist/tomcat/tomcat-8/v8.0.0-RC1/bin/apache-tomcat-8.0.0-RC1-deployer.tar.gz 
+		-o apache-tomcat-8.0.0-RC1-deployer.tar.gz : download the file "-o" option for setting file name -
+		in windows like save as
+	curl -O https://archive.apache.org/dist/tomcat/tomcat-8/v8.0.0-RC1/bin/apache-tomcat-8.0.0-RC1-deployer.tar.gz 
+		: same effect as above - in windows like save
+		
+tar : extract tar file 
+	tar -xf <filename>.tar.gz  : -x for extract, -f file, -c compress
+	
+unzip : extract zip files
+
+pipes : is nothing but output of one pipe is input to other
+	ls -l|find sample.txt
+	
+	echo sample.txt | rm -f   : it will not work - when ever pipe not supporting we can use "xargs"
+	echo sample.txt | xargs rm -f  : this will works
+	unzip <file name>
+	
+
+
+
+
+
+
+ 
+
+ 
